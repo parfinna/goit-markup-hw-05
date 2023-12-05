@@ -686,7 +686,7 @@ body {
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 2;
     letter-spacing: 0.04em;
     padding-left: 16px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -745,11 +745,12 @@ body {
     z-index: 999999;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(46, 47, 66, 0.4);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms linear, visibility 250ms linear;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }   
 
 .backgrop.is-open {
@@ -781,16 +782,25 @@ body {
 
 .modal-vector-btn {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 24px;
     right: 24px;
-    width: 24;
-    height: 24;
+    width: 24px;
+    height: 24px;
+    padding: 0;
     background-color: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-vector-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .modal-vector-btn:hover,
@@ -817,6 +827,10 @@ body {
     margin-bottom: 8px;
 }
 
+.div-content {
+    margin-bottom: 16px;
+}
+
 .review-form-field-label {
     color: #8E8F99;
     font-size: 12px;
@@ -839,7 +853,7 @@ body {
     border: 1px solid rgba(46, 47, 66, 0.40);
     background-color: transparent;
     padding-left: 38px;
-    transition: border-color 250ms linear;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: 0px solid transparent;
 }
 
@@ -848,7 +862,7 @@ body {
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
-    transition: fill 250ms linear;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-form-input:focus {
@@ -865,14 +879,14 @@ body {
     color: rgba(46, 47, 66, 0.40);
     font-size: 12px;
     font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0.48px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     background-color: transparent;
-    padding: 16px 8px;
+    padding: 8px 16px;
     resize: none;
-    transition: border-color 250ms linear;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: 0px solid transparent;
 }
 
@@ -915,7 +929,7 @@ body {
 }
 
  .check-text-box {
-     display: inline-flexbox;
+     display: inline-flex;
      align-items: center;
      justify-content: center;
      fill: transparent;
